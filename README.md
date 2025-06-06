@@ -1,6 +1,6 @@
 # Predicción del Futuro de Empleados
 
-## Motivación
+## Caso de uso 
 En un equipo de ciencia de datos, es común intentar encontrar continuamente un modelo mejor que el existente en producción. Es importante asegurarse de que el servicio no falle cuando se despliega el nuevo modelo.
 
 Este proyecto demuestra cómo usar DagsHub y GitHub Actions para:
