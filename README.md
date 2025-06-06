@@ -1,28 +1,28 @@
-# Employee Future Prediction
+# Predicción del Futuro de Empleados
 
-## Motivation
-In a data science team, it is common to continuously try to find a better model than the existing one in production. It is important to make sure the service doesn't break when the new model is deployed. 
+## Motivación
+En un equipo de ciencia de datos, es común intentar encontrar continuamente un modelo mejor que el existente en producción. Es importante asegurarse de que el servicio no falle cuando se despliega el nuevo modelo.
 
-This project demonstrates how to use DagsHub and GitHub Actions to:
-- automatically test a pull request from a team member
-- merge a pull request when all tests passed
-- deploy the ML model to the existing service
+Este proyecto demuestra cómo usar DagsHub y GitHub Actions para:
+- probar automáticamente una pull request de un miembro del equipo
+- fusionar una pull request cuando todas las pruebas han pasado
+- desplegar el modelo de ML al servicio existente
 
 ![](https://cdn-images-1.medium.com/max/800/1*VZLOx6sCq9_Dj1-44mxKOQ.png)
 
-Here is the summary of the workflow:
+Aquí está el resumen del flujo de trabajo:
 
-## Experiment on DagsHub
-After experimenting with different parameters using [MLFlow](https://mlflow.org/) and [DagsHub](https://towardsdatascience.com/dagshub-a-github-supplement-for-data-scientists-and-ml-engineers-9ecaf49cc505), we choose a combinations of parameters that gives a better performance than the existing model in production and commit the code to Git. 
+## Experimentar en DagsHub
+Después de experimentar con diferentes parámetros usando [MLFlow](https://mlflow.org/) y [DagsHub](https://towardsdatascience.com/dagshub-a-github-supplement-for-data-scientists-and-ml-engineers-9ecaf49cc505), elegimos una combinación de parámetros que ofrece un mejor rendimiento que el modelo existente en producción y se realiza el commit del código en Git.
 
 ![](https://cdn-images-1.medium.com/max/800/1*AVtGMnz8_2K3dOtQAKCTdQ.png)
 
-## Use GitHub Actions to Test Model
-The first workflow named [test_model.yaml](https://github.com/khuyentran1401/employee-future-prediction/blob/master/.github/workflows/test_model.yaml) automatically tests a new pull request, which can only be merged if all tests are passed.
+## Usar GitHub Actions para Probar el Modelo
+El primer flujo de trabajo llamado [test_model.yaml](https://github.com/khuyentran1401/employee-future-prediction/blob/master/.github/workflows/test_model.yaml) prueba automáticamente una nueva pull request, la cual solo puede fusionarse si todas las pruebas pasan.
 
 ![](https://cdn-images-1.medium.com/max/800/1*Prnyik5wQ2A5ciZP2NmRhw.png)
 
-## Use GitHub Actions to Deploy Model After Merging
-The second workflow named [deploy_app.yaml](https://github.com/khuyentran1401/employee-future-prediction/blob/master/.github/workflows/deploy_app.yaml) automatically deploy the new model to the existing service after the pull request is merged.
+## Usar GitHub Actions para Desplegar el Modelo Después de la Fusión
+El segundo flujo de trabajo llamado [deploy_app.yaml](https://github.com/khuyentran1401/employee-future-prediction/blob/master/.github/workflows/deploy_app.yaml) despliega automáticamente el nuevo modelo al servicio existente después de que la pull request es fusionada.
 
 ![](https://cdn-images-1.medium.com/max/800/1*gb37ASDRRILsKJYe3CBFyw.png).
